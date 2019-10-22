@@ -36,6 +36,16 @@ class HomeController extends Controller
         }
 
     }
+    public function listview(){
+        $posts =  BufferPosting::orderBy('created_at','desc')->with('groupInfo')->with('accountInfo')->paginate(10);
+        return view('admin.list-view')->with('posts', $posts);
+    }
+    public function search($field,$query)
+    {
+        return BufferPosting::where($field,'LIKE',"%$query%")->latest()->paginate(10);
+    }
+
+
 
     /**
      * Show the application dashboard.
