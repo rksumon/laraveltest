@@ -13,11 +13,10 @@
                         <select  class="form-control" id="fileds">
                             <option value="name">Name</option>
                             <option value="category">Category</option>
-                            <option value="price">Price</option>
                         </select>
                     </div>
                     <div class="col-md-7">
-                        <input  type="text" class="form-control" placeholder="Search">
+                        <input id="target"  type="text" class="form-control" placeholder="Search">
                     </div>
                 </div>
             </div>
@@ -54,4 +53,12 @@
             </div>
         </div>
     </div>
+@endsection\
+@section('js')
+<script>
+    $( "#target" ).change(function() {
+        alert( "Handler for .change() called." );
+        // here send data via ajax and load this data into dom
+    });
+</script>
 @endsection

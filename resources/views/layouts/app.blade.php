@@ -681,5 +681,6 @@ if($user_meta['temp_subs'] === true){
         }
     });
 </script>
+@yield('js')
 </body>
 </html>

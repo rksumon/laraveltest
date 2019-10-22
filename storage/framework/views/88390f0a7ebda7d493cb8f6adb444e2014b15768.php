@@ -10,11 +10,10 @@
                         <select  class="form-control" id="fileds">
                             <option value="name">Name</option>
                             <option value="category">Category</option>
-                            <option value="price">Price</option>
                         </select>
                     </div>
                     <div class="col-md-7">
-                        <input  type="text" class="form-control" placeholder="Search">
+                        <input id="target"  type="text" class="form-control" placeholder="Search">
                     </div>
                 </div>
             </div>
@@ -52,5 +51,13 @@
             </div>
         </div>
     </div>
+<?php $__env->stopSection(); ?>\
+<?php $__env->startSection('js'); ?>
+<script>
+    $( "#target" ).change(function() {
+        alert( "Handler for .change() called." );
+        // here send data via ajax and load this data into dom
+    });
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
